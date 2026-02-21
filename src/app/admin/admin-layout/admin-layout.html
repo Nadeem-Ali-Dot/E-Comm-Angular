@@ -1,0 +1,77 @@
+<!-- admin-layout.component.html -->
+ <div class="flex fixed bg-white w-full">
+  <figure class="flex items-center mb-6">
+      <a class="flex items-center font-bold" routerLink="/">
+        <img width="50" src="data:image/png;base64,..." />
+        <span class="ml-2">ECOMMERCE</span>
+      </a>
+    </figure>
+      <div class="mt-auto flex items-center gap-2 p-2 hover:bg-gray-100 rounded">
+      <p class="p-2 bg-green-600 text-white rounded-full">N</p>
+      <div>
+        <p class="font-bold">N## A##</p>
+        <p class="text-sm text-gray-500">N##@gamil.com</p>
+      </div>
+    </div>
+    </div>
+<div class="flex min-h-screen">
+
+
+  <!-- LEFT SIDEBAR -->
+  <aside class="fixed left-0 top-0 h-screen w-64 mt-15 bg-white shadow-md p-4 flex flex-col">
+    <!-- Logo -->
+   
+    <!-- Menu -->
+    <nav class="flex-1 space-y-2 overflow-y-auto">
+      <div *ngFor="let menu of menuData">
+
+        <!-- MAIN MENU -->
+        <ng-container *ngIf="menu.children; else singleMenu">
+          <button
+            (click)="toggleMenu(menu.title)"
+            class="flex w-full items-center justify-between p-2 rounded hover:bg-gray-200"
+          >
+            <span class="flex items-center gap-2">
+              <i [class]="menu"></i>
+              {{ menu.title }}
+            </span>
+            <span>{{ openMenu === menu.title ? '-' : '>' }}</span>
+          </button>
+        </ng-container>
+
+        <!-- SINGLE MENU -->
+        <ng-template #singleMenu>
+          <a
+            [routerLink]="menu.path"
+            routerLinkActive="bg-gray-200"
+            class="flex items-center gap-2 p-2 rounded hover:bg-gray-200"
+          >
+            <i [class]="menu"></i>
+            {{ menu.title }}
+          </a>
+        </ng-template>
+
+        <!-- SUB MENU -->
+        <div *ngIf="menu.children && openMenu === menu.title" class="ml-6 mt-1 space-y-1">
+          <a
+            *ngFor="let sub of menu.children"
+            [routerLink]="sub.path"
+            routerLinkActive="bg-gray-200"
+            class="block p-2 text-sm rounded hover:bg-gray-200"
+          >
+            {{ sub.title }}
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Bottom User Info -->
+  
+  </aside>
+
+  <!-- RIGHT CONTENT -->
+  <main class="ml-64 flex-1 bg-gray-100 p-6 min-h-screen mt-15">
+    <router-outlet></router-outlet>
+  </main>
+
+</div>

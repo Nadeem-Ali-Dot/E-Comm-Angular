@@ -1,0 +1,46 @@
+
+<app-heading heading="Add Product RAM"></app-heading>
+<div class="bg-white shadow w-[70%] py-4 px-4 rounded-lg">
+     <label htmlFor="" class="block">Product RAM</label>
+     <input type="text" value={name}   class="border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Enter product RAM" />
+     
+              <button onClick={handlerclick} class="bg-blue-600 mt-2 text-white hover:bg-blue-800 text-2xl rounded-lg py-1 w-full px-4">Submit</button>
+
+
+    <div class="mt-8">
+         <div class="overflow-x-auto">
+      <table class="min-w-full bg-white border border-gray-200 rounded-lg">
+        <thead class="bg-gray-100">
+          <tr>
+            <th class="px-6 py-3 text-left text-gray-600 font-medium uppercase">ID</th>
+            <th class="px-6 py-3 text-left text-gray-600 font-medium uppercase">Name</th>
+            <th class="px-6 py-3 text-left text-gray-600 font-medium uppercase">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- {Array.isArray(List) && List.length > 0 ? (
+            List.map((e,index) => (
+              <tr key={e.index} class="border-t border-gray-200 hover:bg-gray-50">
+                <td class="px-6 py-4">{index+1}</td>
+                <td class="px-6 py-4">{e.name}</td>
+                <td class="px-6 py-4"> <button
+ 
+  class="text-red-500 hover:text-red-700"
+>
+  Delete
+</button> </td>
+              </tr>
+            ))
+          ) : (
+            <tr>
+              <td colSpan={2} class="px-6 py-4 text-center text-gray-500">
+                No products found.
+              </td>
+            </tr>
+          )} -->
+        </tbody>
+      </table>
+    </div>
+  
+

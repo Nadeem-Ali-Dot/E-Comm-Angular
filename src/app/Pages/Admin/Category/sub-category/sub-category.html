@@ -1,0 +1,15 @@
+ 
+ 
+ <app-heading heading="Add Product Sub Category"></app-heading>
+ <div class="bg-white shadow w-[70%] py-4 px-4 rounded-lg">
+     <label htmlFor="" class="block">Parent Category</label>
+     <select name=""  id="" class="border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline">
+<option value="0">None</option>
+<!-- {Category.map(e=>(<option value={e.id}>{e.categoryName}</option>))} -->
+     </select>
+ <label htmlFor="" class="block mt-2">SubCategory</label>
+     <input type="text" value={SubCategory}   class="border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Enter product SubCategory" />
+
+              <button onClick={savehandler} class="bg-blue-600 mt-2 text-white hover:bg-blue-800 text-2xl rounded-lg py-1 w-full px-4">Submit</button>
+   </div>

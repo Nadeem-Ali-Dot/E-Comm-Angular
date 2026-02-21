@@ -1,0 +1,16 @@
+   
+   <app-heading heading="Add Product Category"></app-heading>
+   <div class="bg-white shadow w-[70%] py-4 px-4 rounded-lg">
+     <label htmlFor="" class="block">Category Name</label>
+     <input type="text" value={Name}  class="border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Enter product Category" />
+     <label htmlFor="" class="block mt-2">Color</label>
+     <input type="text"  value={Color} class="border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Enter product Color" />
+     <label htmlFor="" class="block mt-2">Media</label>
+     <input type="file" accept="image/*"
+ class="border rounded w-full py-4 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
+              placeholder="Enter product Color" />
+
+              <button onClick={savehandler} class="bg-blue-600 mt-2 text-white hover:bg-blue-800 text-2xl rounded-lg py-1 w-full px-4">Submit</button>
+   </div>
